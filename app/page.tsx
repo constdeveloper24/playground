@@ -10,16 +10,16 @@ export default function Home() {
     <div className="container mx-auto px-4 py-12">
       <ScrollAnimation>
         <section className="mb-16">
-          <h1 className="text-4xl font-bold text-gray-900 mb-8">최신 아티클</h1>
+          <h1 className="text-4xl font-bold text-gray-900 mb-8">Profile</h1>
 
           {/* 주요 포스트 */}
           <ScrollAnimation delay={0.1} direction="left">
-            <div className="grid md:grid-cols-2 gap-8 mb-12">
+            <div className="flex gap-8 mb-12">
               <div className="rounded-lg overflow-hidden">
                 <img
-                  src={posts[0].image || "/placeholder.svg"}
-                  alt={posts[0].title}
-                  className="w-full h-full object-cover"
+                  src={posts[0].image}
+                  alt={"profile-image"}
+                  className="w-80 h-80 rounded-full object-cover"
                 />
               </div>
               <div className="flex flex-col justify-center">
@@ -35,17 +35,14 @@ export default function Home() {
                 <p className="text-gray-600 mb-4">{posts[0].excerpt}</p>
                 <div className="flex items-center space-x-4 mb-6">
                   <span className="text-sm text-gray-500">
-                    작성자: {posts[0].author}
-                  </span>
-                  <span className="text-sm text-gray-500">
-                    {posts[0].readTime}
+                    Name : {posts[0].author}
                   </span>
                 </div>
                 <Link
                   href={`/posts/${posts[0].id}`}
                   className="inline-flex items-center text-primary-dark font-medium hover:text-primary-foreground"
                 >
-                  아티클 읽기 <ArrowRight className="ml-2 h-4 w-4" />
+                  소개로 이동 <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
               </div>
             </div>
