@@ -5,6 +5,7 @@ import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
 import { FallingFlowers } from "@/components/falling-flowers";
+import ChatBot from "@/components/ChatBot";
 
 const notoSansKR = Noto_Sans_KR({
   subsets: ["latin"],
@@ -12,7 +13,7 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "마이블로그 - 심플하고 깔끔한 블로그",
+  title: "봄's Playground - 심플하고 깔끔한 블로그",
   description:
     "기술, 웹 개발 등에 관한 생각과 아이디어를 공유하는 심플한 블로그입니다.",
 };
@@ -30,6 +31,7 @@ export default function RootLayout({
           <Header />
           <main className="flex-grow relative z-10">{children}</main>
           <Footer />
+          <ChatBot />
         </div>
       </body>
     </html>

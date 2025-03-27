@@ -13,14 +13,14 @@ export default function AboutPage() {
           <ScrollAnimation delay={0.1} direction="up">
             <section className="mb-16">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                마이블로그에 대하여
+                봄's Playground에 대하여
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600">
                 <p>
-                  마이블로그는 웹 개발, 기술, 생산성, 디자인 등 다양한 주제에
-                  관한 지식과 경험을 공유하는 플랫폼입니다. 2023년에 시작된 이
-                  블로그는 개발자, 디자이너, 그리고 기술에 관심 있는 모든
-                  분들에게 유용한 정보를 제공하는 것을 목표로 합니다.
+                  봄's Playground는 웹 개발, 기술, 생산성, 디자인 등 다양한
+                  주제에 관한 지식과 경험을 공유하는 플랫폼입니다. 2023년에
+                  시작된 이 블로그는 개발자, 디자이너, 그리고 기술에 관심 있는
+                  모든 분들에게 유용한 정보를 제공하는 것을 목표로 합니다.
                 </p>
                 <p className="mt-4">
                   우리는 복잡한 기술적 개념을 쉽게 이해할 수 있도록 설명하고,
@@ -47,10 +47,10 @@ export default function AboutPage() {
               <div className="mt-6 text-gray-600">
                 <p>
                   우리는 기술이 모든 사람에게 접근 가능해야 한다고 믿습니다.
-                  그래서 마이블로그는 초보자부터 전문가까지 모든 수준의 독자가
-                  이해할 수 있는 콘텐츠를 제공하기 위해 노력합니다. 우리의
-                  목표는 단순히 정보를 전달하는 것이 아니라, 독자들이 그 지식을
-                  실제로 적용하고 성장할 수 있도록 돕는 것입니다.
+                  그래서 봄's Playground는 초보자부터 전문가까지 모든 수준의
+                  독자가 이해할 수 있는 콘텐츠를 제공하기 위해 노력합니다.
+                  우리의 목표는 단순히 정보를 전달하는 것이 아니라, 독자들이 그
+                  지식을 실제로 적용하고 성장할 수 있도록 돕는 것입니다.
                 </p>
               </div>
             </section>

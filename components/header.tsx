@@ -18,7 +18,7 @@ export function Header() {
       <div className="container mx-auto px-4 py-6">
         <div className="flex justify-between items-center">
           <Link href="/" className="text-2xl font-bold text-gray-900">
-            마이블로그
+            봄's Playground
           </Link>
           <nav>
             <ul className="flex space-x-6">

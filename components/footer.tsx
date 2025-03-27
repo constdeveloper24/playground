@@ -7,7 +7,9 @@ export function Footer() {
       <div className="container mx-auto px-4 py-8">
         <div className="grid md:grid-cols-4 gap-8">
           <div>
-            <h3 className="text-lg font-bold text-gray-900 mb-4">마이블로그</h3>
+            <h3 className="text-lg font-bold text-gray-900 mb-4">
+              봄's Playground
+            </h3>
             <p className="text-gray-600 text-sm">
               기술, 웹 개발 등에 관한 생각과 아이디어를 공유하는 심플한
               블로그입니다.
@@ -126,7 +128,7 @@ export function Footer() {
           </div>
         </div>
         <div className="border-t mt-8 pt-8 text-center text-sm text-gray-600">
-          <p>© {new Date().getFullYear()} 마이블로그. 모든 권리 보유.</p>
+          <p>© {new Date().getFullYear()} 봄's Playground. 모든 권리 보유.</p>
         </div>
       </div>
     </footer>

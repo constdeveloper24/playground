@@ -1,6 +1,4 @@
-import type { Config } from "tailwindcss";
-
-const config: Config = {
+const config = {
   content: [
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
@@ -11,10 +9,10 @@ const config: Config = {
     extend: {
       colors: {
         primary: {
-          DEFAULT: "#F9E16B", // 개나리 노랑색
-          light: "#FDF3B8", // 더 밝은 노랑색
-          dark: "#E6C619", // 더 진한 노랑색
-          foreground: "#4B3F10", // 노랑색 위에 올 텍스트 색상
+          DEFAULT: "#FF8FAB", // 연분홍색
+          light: "#FFDBEB", // 더 밝은 분홍색
+          dark: "#FF6B8B", // 더 진한 분홍색
+          foreground: "#4F1A2A", // 분홍색 위에 올 텍스트 색상
         },
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
@@ -50,6 +48,20 @@ const config: Config = {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
+      },
+      keyframes: {
+        "scale-up": {
+          "0%": { transform: "scale(0)", opacity: "0" },
+          "100%": { transform: "scale(1)", opacity: "1" },
+        },
+        "scale-down": {
+          "0%": { transform: "scale(1)", opacity: "1" },
+          "100%": { transform: "scale(0)", opacity: "0" },
+        },
+      },
+      animation: {
+        "scale-up": "scale-up 0.3s ease-out",
+        "scale-down": "scale-down 0.3s ease-out",
       },
     },
   },
