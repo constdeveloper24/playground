@@ -4,7 +4,7 @@ import { ScrollAnimation } from "@/components/scroll-animation";
 import { getPostById } from "@/lib/data";
 import Link from "next/link";
 import { useParams } from "next/navigation";
-import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
+import { ArrowLeft, Calendar, Clock } from "lucide-react";
 
 export default function PostPage() {
   const params = useParams();

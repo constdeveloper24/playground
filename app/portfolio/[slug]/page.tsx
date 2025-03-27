@@ -1,16 +1,16 @@
 "use client";
 import React from "react";
 import { ScrollAnimation } from "@/components/scroll-animation";
-import { categories, getPostsByCategory } from "@/lib/data";
+import { portfolios, getPostsByCategory } from "@/lib/data";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ArrowLeft } from "lucide-react";
 
 export default function CategoryPage() {
   const params = useParams();
-  const slug = params.slug as string;
+  const slug = params!.slug as string;
 
-  const category = categories.find((cat) => cat.slug === slug);
+  const category = portfolios.find((cat) => cat.slug === slug);
   const posts = getPostsByCategory(slug);
 
   if (!category) {
@@ -71,9 +71,6 @@ export default function CategoryPage() {
                   </h3>
                   <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
                   <div className="flex items-center justify-between">
-                    <span className="text-xs text-gray-500">
-                      작성자: {post.author}
-                    </span>
                     <span className="text-xs text-gray-500">
                       {post.readTime}
                     </span>
