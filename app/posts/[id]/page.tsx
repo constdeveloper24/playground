@@ -8,7 +8,7 @@ import { ArrowLeft, Calendar, Clock, User } from "lucide-react";
 
 export default function PostPage() {
   const params = useParams();
-  const id = Number(params.id);
+  const id = Number(params!.id);
 
   const post = getPostById(id);
 
@@ -57,7 +57,7 @@ export default function PostPage() {
 
             <div className="flex items-center space-x-4 mb-8">
               <span className="text-sm text-gray-500 flex items-center">
-                <User className="h-4 w-4 mr-1" /> {post.author}
+                {/* <User className="h-4 w-4 mr-1" /> {post.author} */}
               </span>
               <span className="text-sm text-gray-500 flex items-center">
                 <Clock className="h-4 w-4 mr-1" /> {post.readTime}

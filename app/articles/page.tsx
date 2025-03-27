@@ -67,9 +67,6 @@ export default function ArticlesPage() {
                   <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-gray-500">
-                      작성자: {post.author}
-                    </span>
-                    <span className="text-xs text-gray-500">
                       {post.readTime}
                     </span>
                   </div>

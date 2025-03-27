@@ -33,8 +33,8 @@ export function Header() {
                 </Link>
               </li>
               <li>
-                <Link href="/categories" className={isActive("/categories")}>
-                  카테고리
+                <Link href="/portfolio" className={isActive("/portfolio")}>
+                  포트폴리오
                 </Link>
               </li>
               <li>

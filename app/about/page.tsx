@@ -17,17 +17,17 @@ export default function AboutPage() {
               </h2>
               <div className="prose prose-lg max-w-none text-gray-600">
                 <p>
-                  봄's Playground는 웹 개발, 기술, 생산성, 디자인 등 다양한
-                  주제에 관한 지식과 경험을 공유하는 플랫폼입니다. 2023년에
-                  시작된 이 블로그는 개발자, 디자이너, 그리고 기술에 관심 있는
-                  모든 분들에게 유용한 정보를 제공하는 것을 목표로 합니다.
+                  "봄's Playground"는 프론트엔드 개발자 봄이 만들어가는 디지털
+                  놀이터입니다. 이 공간은 단순한 기술 기록을 넘어, AI와 함께
+                  상상한 것을 직접 구현하고 실험해보는 창작의 무대입니다.
                 </p>
                 <p className="mt-4">
-                  우리는 복잡한 기술적 개념을 쉽게 이해할 수 있도록 설명하고,
-                  실용적인 팁과 튜토리얼을 통해 여러분의 기술적 성장을 돕고자
-                  합니다. 또한 최신 기술 트렌드와 업계 소식을 정기적으로
-                  업데이트하여 항상 최신 정보를 접할 수 있도록 노력하고
-                  있습니다.
+                  프론트엔드 기술을 중심으로, 인터랙션, 애니메이션, UI/UX,
+                  그리고 생성형 AI를 결합해 새로운 아이디어를 테스트하고, 다양한
+                  가능성을 탐색하는 과정을 담고 있습니다. 때로는 작고 귀여운
+                  컴포넌트 하나, 때로는 도전적인 사이드 프로젝트 하나.
+                  완성도보다 ‘시도’와 ‘표현’을 소중히 여기며, 저만의 속도로 한
+                  걸음씩 즐겁게 채워나가고 있어요.
                 </p>
               </div>
             </section>
@@ -36,7 +36,7 @@ export default function AboutPage() {
           <ScrollAnimation delay={0.2} direction="left">
             <section className="mb-16">
               <h2 className="text-2xl font-bold text-gray-900 mb-4">
-                우리의 미션
+                나의 미션
               </h2>
               <div className="bg-gray-50 p-6 rounded-lg border">
                 <p className="text-gray-600">
@@ -46,71 +46,10 @@ export default function AboutPage() {
               </div>
               <div className="mt-6 text-gray-600">
                 <p>
-                  우리는 기술이 모든 사람에게 접근 가능해야 한다고 믿습니다.
-                  그래서 봄's Playground는 초보자부터 전문가까지 모든 수준의
-                  독자가 이해할 수 있는 콘텐츠를 제공하기 위해 노력합니다.
-                  우리의 목표는 단순히 정보를 전달하는 것이 아니라, 독자들이 그
-                  지식을 실제로 적용하고 성장할 수 있도록 돕는 것입니다.
+                  "Playground"라는 이름처럼, 여기엔 실패도, 호기심도, 상상도
+                  모두 환영입니다. 이 여정을 함께 지켜봐 주신다면, 참 기쁠 것
+                  같아요.
                 </p>
-              </div>
-            </section>
-          </ScrollAnimation>
-
-          <ScrollAnimation delay={0.3} direction="right">
-            <section className="mb-16">
-              <h2 className="text-2xl font-bold text-gray-900 mb-4">팀 소개</h2>
-              <div className="grid md:grid-cols-2 gap-8">
-                <div className="bg-white p-6 rounded-lg border hover:shadow-md transition-shadow">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-gray-200 mr-4"></div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900">
-                        김지은
-                      </h3>
-                      <p className="text-gray-600">창립자 & 수석 작가</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-4">
-                    10년 이상의 웹 개발 경험을 가진 풀스택 개발자. React,
-                    Node.js, 그리고 클라우드 아키텍처에 전문성을 갖고 있습니다.
-                  </p>
-                  <div className="flex space-x-3">
-                    <a href="#" className="text-gray-500 hover:text-gray-900">
-                      <Phone className="h-5 w-5" />
-                    </a>
-                    <a href="#" className="text-gray-500 hover:text-gray-900">
-                      <Phone className="h-5 w-5" />
-                    </a>
-                  </div>
-                </div>
-
-                <div className="bg-white p-6 rounded-lg border hover:shadow-md transition-shadow">
-                  <div className="flex items-center mb-4">
-                    <div className="w-16 h-16 rounded-full bg-gray-200 mr-4"></div>
-                    <div>
-                      <h3 className="text-xl font-bold text-gray-900">
-                        이민호
-                      </h3>
-                      <p className="text-gray-600">기술 에디터</p>
-                    </div>
-                  </div>
-                  <p className="text-gray-600 mb-4">
-                    AI와 머신러닝 분야의 전문가. 최신 기술 트렌드를 분석하고
-                    복잡한 개념을 쉽게 설명하는 데 탁월한 능력을 가지고
-                    있습니다.
-                  </p>
-                  <div className="flex space-x-3">
-                    <a href="#" className="text-gray-500 hover:text-gray-900">
-                      <Phone className="h-5 w-5" />
-                    </a>
-                    <a href="#" className="text-gray-500 hover:text-gray-900">
-                      <Phone className="h-5 w-5" />
-                    </a>
-                    <a href="#" className="text-gray-500 hover:text-gray-900">
-                      <Phone className="h-5 w-5" />
-                    </a>
-                  </div>
-                </div>
               </div>
             </section>
           </ScrollAnimation>

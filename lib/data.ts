@@ -1,20 +1,43 @@
+export type Profile = {
+  title: string;
+  excerpt: string;
+  content?: string;
+  date: string;
+  category: string;
+  readTime: string;
+  image: string;
+  href?: string;
+};
+
 export type Post = {
   id: number;
   title: string;
   excerpt: string;
   content?: string;
   date: string;
-  author: string;
   category: string;
   readTime: string;
   image: string;
+  href?: string;
 };
 
-export type Category = {
+export type portfolio = {
   name: string;
   slug: string;
   count: number;
   description: string;
+};
+
+export const profile: Profile = {
+  title: "장봄 프론트엔드 개발자(Front-end Developer)",
+  excerpt: "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
+  content:
+    "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
+  date: "2025년 3월 28일",
+  category: "Play Ground Open",
+  readTime: "",
+  image: "/images/profile.png",
+  href: "/about",
 };
 
 // 샘플 블로그 포스트 데이터
@@ -26,11 +49,11 @@ export const posts: Post[] = [
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
     content:
       "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
-    date: "2025년 3월 27일",
-    author: "장봄",
+    date: "2025년 3월 28일",
     category: "Play Ground Open",
     readTime: "",
     image: "/images/profile.png",
+    href: "/about",
   },
   {
     id: 2,
@@ -40,7 +63,6 @@ export const posts: Post[] = [
     content:
       "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
     date: "2025년 3월 27일",
-    author: "장봄",
     category: "Play Ground Open",
     readTime: "",
     image: "/images/profile.png",
@@ -53,7 +75,6 @@ export const posts: Post[] = [
     content:
       "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
     date: "2025년 3월 27일",
-    author: "장봄",
     category: "Play Ground Open",
     readTime: "",
     image: "/images/profile.png",
@@ -66,7 +87,6 @@ export const posts: Post[] = [
     content:
       "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
     date: "2025년 3월 27일",
-    author: "장봄",
     category: "Play Ground Open",
     readTime: "",
     image: "/images/profile.png",
@@ -79,7 +99,6 @@ export const posts: Post[] = [
     content:
       "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
     date: "2025년 3월 27일",
-    author: "장봄",
     category: "Play Ground Open",
     readTime: "",
     image: "/images/profile.png",
@@ -92,7 +111,6 @@ export const posts: Post[] = [
     content:
       "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
     date: "2025년 3월 27일",
-    author: "장봄",
     category: "Play Ground Open",
     readTime: "",
     image: "/images/profile.png",
@@ -105,7 +123,6 @@ export const posts: Post[] = [
     content:
       "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
     date: "2025년 3월 27일",
-    author: "장봄",
     category: "Play Ground Open",
     readTime: "",
     image: "/images/profile.png",
@@ -113,7 +130,7 @@ export const posts: Post[] = [
 ];
 
 // 카테고리 데이터
-export const categories: Category[] = [
+export const portfolios: portfolio[] = [
   {
     name: "웹 개발",
     slug: "web-development",
@@ -146,7 +163,7 @@ export const categories: Category[] = [
 
 // 카테고리별 포스트 가져오기
 export function getPostsByCategory(categorySlug: string): Post[] {
-  const categoryName = categories.find(
+  const categoryName = portfolios.find(
     (cat) => cat.slug === categorySlug
   )?.name;
   if (!categoryName) return [];
