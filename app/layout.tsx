@@ -13,9 +13,9 @@ const notoSansKR = Noto_Sans_KR({
 });
 
 export const metadata: Metadata = {
-  title: "봄's Playground - 심플하고 깔끔한 블로그",
+  title: "봄's Playground - AI와 함께하는 창작 놀이터",
   description:
-    "기술, 웹 개발 등에 관한 생각과 아이디어를 공유하는 심플한 블로그입니다.",
+    "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
 };
 
 export default function RootLayout({
