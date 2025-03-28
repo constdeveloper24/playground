@@ -2,22 +2,22 @@
 import React from "react";
 import DOMPurify from "isomorphic-dompurify";
 import { ScrollAnimation } from "@/components/scroll-animation";
-import { getPostById } from "@/lib/data";
+import { getArticleById } from "@/lib/data";
 import Link from "next/link";
 import { useParams } from "next/navigation";
 import { ArrowLeft, Calendar, Clock } from "lucide-react";
 
-export default function PostPage() {
+export default function ArticlePage() {
   const params = useParams();
   const id = Number(params!.id);
 
-  const post = getPostById(id);
+  const article = getArticleById(id);
 
-  const sanitizedContent = post?.content
-    ? DOMPurify.sanitize(post.content)
+  const sanitizedContent = article?.content
+    ? DOMPurify.sanitize(article.content)
     : "";
 
-  if (!post) {
+  if (!article) {
     return (
       <div className="container mx-auto px-4 py-12">
         <div className="text-center py-12">
@@ -49,20 +49,20 @@ export default function PostPage() {
           <div className="mb-8">
             <div className="flex items-center space-x-4 mb-4">
               <span className="bg-primary-light text-primary-dark text-xs font-medium px-2.5 py-0.5 rounded-full">
-                {post.category}
+                {article.category}
               </span>
               <span className="text-sm text-gray-500 flex items-center">
-                <Calendar className="h-4 w-4 mr-1" /> {post.date}
+                <Calendar className="h-4 w-4 mr-1" /> {article.date}
               </span>
             </div>
 
             <h1 className="text-4xl font-bold text-gray-900 mb-4">
-              {post.title}
+              {article.title}
             </h1>
 
             <div className="flex items-center space-x-4 mb-8">
               <span className="text-sm text-gray-500 flex items-center">
-                <Clock className="h-4 w-4 mr-1" /> {post.readTime}
+                <Clock className="h-4 w-4 mr-1" /> {article.readTime}
               </span>
             </div>
           </div>
@@ -71,8 +71,8 @@ export default function PostPage() {
         <ScrollAnimation delay={0.1}>
           <div className="rounded-lg overflow-hidden mb-8">
             <img
-              src={post.image}
-              alt={post.title}
+              src={article.image}
+              alt={article.title}
               className="w-full h-64 md:h-96 object-contain"
             />
           </div>

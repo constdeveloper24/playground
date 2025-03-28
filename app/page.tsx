@@ -3,9 +3,13 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 import { ScrollAnimation } from "@/components/scroll-animation";
-import { portfolios, posts, profile } from "@/lib/data";
+import { articles, profile } from "@/lib/data";
+import { portfolioItems } from "@/lib/portfolio-data";
 
 export default function Home() {
+  // 최신 포트폴리오 아이템 3개만 가져오기
+  const featuredPortfolio = portfolioItems.slice(0, 3);
+
   return (
     <div className="container mx-auto px-4 py-12">
       <ScrollAnimation>
@@ -57,39 +61,39 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.slice(0, 3).map((post, index) => (
+              {articles.slice(0, 3).map((article, index) => (
                 <ScrollAnimation
-                  key={post.id}
+                  key={article.id}
                   delay={0.1 * (index + 1)}
                   direction="up"
                 >
                   <article className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow h-full">
-                    <Link href={`/posts/${post.id}`}>
+                    <Link href={`/articles/${article.id}`}>
                       <div className="h-48 overflow-hidden">
                         <img
-                          src={post.image || "/placeholder.svg"}
-                          alt={post.title}
+                          src={article.image || "/placeholder.svg"}
+                          alt={article.title}
                           className="w-full h-full object-cover"
                         />
                       </div>
                       <div className="p-6">
                         <div className="flex items-center space-x-4 mb-3">
                           <span className="text-xs font-medium text-primary-dark">
-                            {post.category}
+                            {article.category}
                           </span>
                           <span className="text-xs text-gray-500">
-                            {post.date}
+                            {article.date}
                           </span>
                         </div>
                         <h3 className="text-xl font-bold text-gray-900 mb-2">
-                          {post.title}
+                          {article.title}
                         </h3>
                         <p className="text-gray-600 text-sm mb-4">
-                          {post.excerpt}
+                          {article.excerpt}
                         </p>
                         <div className="flex items-center justify-between">
                           <span className="text-xs text-gray-500">
-                            {post.readTime}
+                            {article.readTime}
                           </span>
                         </div>
                       </div>
@@ -105,7 +109,7 @@ export default function Home() {
       <ScrollAnimation delay={0.3} direction="right">
         <section className="mb-16">
           <div className="flex justify-between items-center mb-8">
-            <h2 className="text-2xl font-bold text-gray-900">Portfolio</h2>
+            <h2 className="text-2xl font-bold text-gray-900">포트폴리오</h2>
             <Link
               href="/portfolio"
               className="text-primary-dark font-medium hover:text-primary-foreground flex items-center"
@@ -114,10 +118,42 @@ export default function Home() {
             </Link>
           </div>
 
-          <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-            {portfolios.map((portfolio, idx) => {
-              return <div key={idx}>{portfolio.name}</div>;
-            })}
+          <div className="grid md:grid-cols-3 gap-6">
+            {featuredPortfolio.map((item, index) => (
+              <ScrollAnimation
+                key={item.id}
+                delay={0.1 * (index + 1)}
+                direction="up"
+              >
+                <Link href={`/portfolio/${item.id}`} className="group">
+                  <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow h-full">
+                    <div className="h-48 overflow-hidden">
+                      <img
+                        src={item.image || "/placeholder.svg"}
+                        alt={item.title}
+                        className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="p-6">
+                      <div className="flex items-center justify-between mb-3">
+                        <span className="text-xs font-medium text-primary-dark px-2 py-1 bg-primary-light rounded-full">
+                          {item.category}
+                        </span>
+                        <span className="text-xs text-gray-500">
+                          {item.year}
+                        </span>
+                      </div>
+                      <h3 className="text-xl font-bold text-gray-900 mb-2 group-hover:text-primary-dark transition-colors">
+                        {item.title}
+                      </h3>
+                      <p className="text-gray-600 text-sm">
+                        {item.description}
+                      </p>
+                    </div>
+                  </div>
+                </Link>
+              </ScrollAnimation>
+            ))}
           </div>
         </section>
       </ScrollAnimation>

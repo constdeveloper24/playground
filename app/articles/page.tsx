@@ -2,18 +2,18 @@
 
 import { useState } from "react";
 import { ScrollAnimation } from "@/components/scroll-animation";
-import { posts } from "@/lib/data";
+import { articles } from "@/lib/data";
 import Link from "next/link";
 import { Search } from "lucide-react";
 
 export default function ArticlesPage() {
   const [searchTerm, setSearchTerm] = useState("");
 
-  const filteredPosts = posts.filter(
-    (post) =>
-      post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
-      post.category.toLowerCase().includes(searchTerm.toLowerCase())
+  const filteredArticles = articles.filter(
+    (article) =>
+      article.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.excerpt.toLowerCase().includes(searchTerm.toLowerCase()) ||
+      article.category.toLowerCase().includes(searchTerm.toLowerCase())
   );
 
   return (
@@ -40,38 +40,42 @@ export default function ArticlesPage() {
         </div>
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filteredPosts.map((post, index) => (
+          {filteredArticles.map((article, index) => (
             <ScrollAnimation
-              key={post.id}
+              key={article.id}
               delay={0.05 * (index % 6)}
               direction="up"
             >
               <article className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow h-full">
                 <div className="h-48 overflow-hidden">
                   <img
-                    src={post.image || "/placeholder.svg"}
-                    alt={post.title}
+                    src={article.image || "/placeholder.svg"}
+                    alt={article.title}
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <div className="p-6">
                   <div className="flex items-center space-x-4 mb-3">
                     <span className="text-xs font-medium text-primary-dark">
-                      {post.category}
+                      {article.category}
                     </span>
-                    <span className="text-xs text-gray-500">{post.date}</span>
+                    <span className="text-xs text-gray-500">
+                      {article.date}
+                    </span>
                   </div>
                   <h3 className="text-xl font-bold text-gray-900 mb-2">
-                    {post.title}
+                    {article.title}
                   </h3>
-                  <p className="text-gray-600 text-sm mb-4">{post.excerpt}</p>
+                  <p className="text-gray-600 text-sm mb-4">
+                    {article.excerpt}
+                  </p>
                   <div className="flex items-center justify-between">
                     <span className="text-xs text-gray-500">
-                      {post.readTime}
+                      {article.readTime}
                     </span>
                   </div>
                   <Link
-                    href={`/posts/${post.id}`}
+                    href={`/articles/${article.id}`}
                     className="mt-4 inline-block text-primary-dark hover:text-primary-foreground font-medium text-sm"
                   >
                     계속 읽기
@@ -82,7 +86,7 @@ export default function ArticlesPage() {
           ))}
         </div>
 
-        {filteredPosts.length === 0 && (
+        {filteredArticles.length === 0 && (
           <div className="text-center py-12">
             <h3 className="text-xl font-medium text-gray-900 mb-2">
               검색 결과가 없습니다

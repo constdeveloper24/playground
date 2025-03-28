@@ -1,4 +1,4 @@
-export const post1 = `<p>최근에 재미있는 실험을 해봤어요.<br />
+export const article1 = `<p>최근에 재미있는 실험을 해봤어요.<br />
 바로 <strong>제 사진을 캐릭터화하고, 그 캐릭터를 움직이는 영상으로 만드는 작업</strong>이었어요.<br />
 사용한 도구는 <strong>소라(Sora)</strong>와 <strong>챗지피티(ChatGPT)</strong>!</p>
 

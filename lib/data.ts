@@ -1,4 +1,4 @@
-import { post1 } from "./post1";
+import { article1 } from "./article1";
 
 export type Profile = {
   title: string;
@@ -11,7 +11,7 @@ export type Profile = {
   href?: string;
 };
 
-export type Post = {
+export type article = {
   id: number;
   title: string;
   excerpt: string;
@@ -42,14 +42,14 @@ export const profile: Profile = {
   href: "/about",
 };
 
-// 샘플 블로그 포스트 데이터
-export const posts: Post[] = [
+// 샘플 블로그 article 데이터
+export const articles: article[] = [
   {
     id: 1,
     title: "소라(Sora)와 챗지피티(ChatGPT)를 활용한 캐릭터 영상 만들기 🎥✨",
     excerpt:
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
-    content: post1,
+    content: article1,
     date: "2025년 3월 28일",
     category: "Sora & ChatGPT",
     readTime: "3분",
@@ -162,16 +162,16 @@ export const portfolios: portfolio[] = [
   },
 ];
 
-// 카테고리별 포스트 가져오기
-export function getPostsByCategory(categorySlug: string): Post[] {
+// 카테고리별 article 가져오기
+export function getArticlesByCategory(categorySlug: string): article[] {
   const categoryName = portfolios.find(
     (cat) => cat.slug === categorySlug
   )?.name;
   if (!categoryName) return [];
-  return posts.filter((post) => post.category === categoryName);
+  return articles.filter((article) => article.category === categoryName);
 }
 
-// 포스트 ID로 포스트 가져오기
-export function getPostById(id: number): Post | undefined {
-  return posts.find((post) => post.id === id);
+// article ID로 article 가져오기
+export function getArticleById(id: number): article | undefined {
+  return articles.find((article) => article.id === id);
 }
