@@ -4,7 +4,7 @@ import { Noto_Sans_KR } from "next/font/google";
 import "./globals.css";
 import { Header } from "@/components/header";
 import { Footer } from "@/components/footer";
-import { FallingFlowers } from "@/components/falling-flowers";
+import { SeasonalFallingItems } from "@/components/seasonal-falling-items";
 import ChatBot from "@/components/ChatBot";
 
 const notoSansKR = Noto_Sans_KR({
@@ -27,7 +27,7 @@ export default function RootLayout({
     <html lang="ko">
       <body className={notoSansKR.className}>
         <div className="min-h-screen bg-white flex flex-col relative">
-          <FallingFlowers count={10} />
+          <SeasonalFallingItems count={30} />
           <Header />
           <main className="flex-grow relative z-10">{children}</main>
           <Footer />
