@@ -1,9 +1,15 @@
 "use client";
-import React from "react";
+import React, { useRef } from "react";
 import { ScrollAnimation } from "@/components/scroll-animation";
 import { Mail } from "lucide-react";
 
 export default function AboutPage() {
+  const formRef = useRef<HTMLFormElement>(null);
+  const formSubmit = () => {
+    setTimeout(() => {
+      formRef.current?.reset();
+    }, 100); // 리디렉션 전에 리셋
+  };
   return (
     <div className="container mx-auto px-4 py-12">
       <ScrollAnimation>
@@ -67,10 +73,16 @@ export default function AboutPage() {
                 <div className="flex items-center mb-4">
                   <Mail className="h-5 w-5 text-blue-600 mr-2" />
                   <span className="text-gray-900 font-medium">
-                    contact@myblog.com
+                    constdeveloper24@gmail.com
                   </span>
                 </div>
-                <form className="space-y-4">
+                <form
+                  ref={formRef}
+                  action="https://formsubmit.co/constdeveloper24@gmail.com"
+                  method="POST"
+                  onSubmit={formSubmit}
+                  className="space-y-4"
+                >
                   <div className="grid md:grid-cols-2 gap-4">
                     <div>
                       <label
@@ -82,6 +94,7 @@ export default function AboutPage() {
                       <input
                         type="text"
                         id="name"
+                        name="name"
                         className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
@@ -95,6 +108,7 @@ export default function AboutPage() {
                       <input
                         type="email"
                         id="email"
+                        name="email"
                         className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                       />
                     </div>
@@ -109,6 +123,7 @@ export default function AboutPage() {
                     <input
                       type="text"
                       id="subject"
+                      name="subject"
                       className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     />
                   </div>
@@ -121,15 +136,37 @@ export default function AboutPage() {
                     </label>
                     <textarea
                       id="message"
+                      name="message"
                       rows={4}
                       className="w-full px-4 py-2 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500"
                     ></textarea>
                   </div>
+                  {/* 성공 후 리디렉션 */}
+                  <input
+                    type="hidden"
+                    name="_next"
+                    value="https://springplayground.vercel.app/about"
+                  />
+
+                  {/* 자동 응답 */}
+                  <input
+                    type="hidden"
+                    name="_autoresponse"
+                    value="메일을 잘 받았습니다. 감사합니다 :)"
+                  />
+
+                  {/* 스팸 방지 필드 */}
+                  <input
+                    type="text"
+                    name="_honey"
+                    style={{ display: "none" }}
+                  />
+
                   <button
                     type="submit"
                     className="bg-blue-600 hover:bg-blue-700 text-white font-medium px-6 py-2 rounded-lg transition-colors"
                   >
-                    메시지 보내기
+                    이메일 보내기
                   </button>
                 </form>
               </div>
