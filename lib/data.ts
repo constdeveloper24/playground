@@ -1,3 +1,5 @@
+import { post1 } from "./post1";
+
 export type Profile = {
   title: string;
   excerpt: string;
@@ -44,14 +46,13 @@ export const profile: Profile = {
 export const posts: Post[] = [
   {
     id: 1,
-    title: "장봄 프론트엔드 개발자(Front-end Developer)",
+    title: "소라(Sora)와 챗지피티(ChatGPT)를 활용한 캐릭터 영상 만들기 🎥✨",
     excerpt:
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
-    content:
-      "웹 개발은 현대 디지털 세계에서 가장 중요한 기술 중 하나입니다. 이 글에서는 HTML, CSS, JavaScript의 기본 개념부터 시작하여 웹 개발의 기초를 다루고 있습니다. 웹 개발을 시작하려는 초보자들에게 도움이 될 것입니다.",
+    content: post1,
     date: "2025년 3월 28일",
-    category: "Play Ground Open",
-    readTime: "",
+    category: "Sora & ChatGPT",
+    readTime: "3분",
     image: "/images/profile.png",
     href: "/about",
   },

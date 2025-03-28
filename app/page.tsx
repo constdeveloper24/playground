@@ -57,41 +57,43 @@ export default function Home() {
               </Link>
             </div>
             <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-              {posts.slice(1, 4).map((post, index) => (
+              {posts.slice(0, 3).map((post, index) => (
                 <ScrollAnimation
                   key={post.id}
                   delay={0.1 * (index + 1)}
                   direction="up"
                 >
                   <article className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow h-full">
-                    <div className="h-48 overflow-hidden">
-                      <img
-                        src={post.image || "/placeholder.svg"}
-                        alt={post.title}
-                        className="w-full h-full object-cover"
-                      />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center space-x-4 mb-3">
-                        <span className="text-xs font-medium text-primary-dark">
-                          {post.category}
-                        </span>
-                        <span className="text-xs text-gray-500">
-                          {post.date}
-                        </span>
+                    <Link href={`/posts/${post.id}`}>
+                      <div className="h-48 overflow-hidden">
+                        <img
+                          src={post.image || "/placeholder.svg"}
+                          alt={post.title}
+                          className="w-full h-full object-cover"
+                        />
                       </div>
-                      <h3 className="text-xl font-bold text-gray-900 mb-2">
-                        {post.title}
-                      </h3>
-                      <p className="text-gray-600 text-sm mb-4">
-                        {post.excerpt}
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="text-xs text-gray-500">
-                          {post.readTime}
-                        </span>
+                      <div className="p-6">
+                        <div className="flex items-center space-x-4 mb-3">
+                          <span className="text-xs font-medium text-primary-dark">
+                            {post.category}
+                          </span>
+                          <span className="text-xs text-gray-500">
+                            {post.date}
+                          </span>
+                        </div>
+                        <h3 className="text-xl font-bold text-gray-900 mb-2">
+                          {post.title}
+                        </h3>
+                        <p className="text-gray-600 text-sm mb-4">
+                          {post.excerpt}
+                        </p>
+                        <div className="flex items-center justify-between">
+                          <span className="text-xs text-gray-500">
+                            {post.readTime}
+                          </span>
+                        </div>
                       </div>
-                    </div>
+                    </Link>
                   </article>
                 </ScrollAnimation>
               ))}

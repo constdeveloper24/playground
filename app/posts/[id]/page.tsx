@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import DOMPurify from "isomorphic-dompurify";
 import { ScrollAnimation } from "@/components/scroll-animation";
 import { getPostById } from "@/lib/data";
 import Link from "next/link";
@@ -11,6 +12,10 @@ export default function PostPage() {
   const id = Number(params!.id);
 
   const post = getPostById(id);
+
+  const sanitizedContent = post?.content
+    ? DOMPurify.sanitize(post.content)
+    : "";
 
   if (!post) {
     return (
@@ -57,9 +62,6 @@ export default function PostPage() {
 
             <div className="flex items-center space-x-4 mb-8">
               <span className="text-sm text-gray-500 flex items-center">
-                {/* <User className="h-4 w-4 mr-1" /> {post.author} */}
-              </span>
-              <span className="text-sm text-gray-500 flex items-center">
                 <Clock className="h-4 w-4 mr-1" /> {post.readTime}
               </span>
             </div>
@@ -69,71 +71,20 @@ export default function PostPage() {
         <ScrollAnimation delay={0.1}>
           <div className="rounded-lg overflow-hidden mb-8">
             <img
-              src={post.image || "/placeholder.svg"}
+              src={post.image}
               alt={post.title}
-              className="w-full h-64 md:h-96 object-cover"
+              className="w-full h-64 md:h-96 object-contain"
             />
           </div>
         </ScrollAnimation>
 
         <ScrollAnimation delay={0.2}>
-          <div className="prose prose-lg max-w-none text-gray-600 mb-12">
-            <p>{post.content || post.excerpt}</p>
-
-            {/* 샘플 콘텐츠 - 실제 구현 시 post.content를 사용 */}
-            <p className="mt-4">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-              euismod, nisl vel ultricies lacinia, nisl nisl aliquam nisl, eu
-              aliquam nisl nisl sit amet nisl. Sed euismod, nisl vel ultricies
-              lacinia, nisl nisl aliquam nisl, eu aliquam nisl nisl sit amet
-              nisl.
-            </p>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">
-              주요 내용
-            </h2>
-
-            <p>
-              Nullam quis risus eget urna mollis ornare vel eu leo. Cum sociis
-              natoque penatibus et magnis dis parturient montes, nascetur
-              ridiculus mus. Nullam id dolor id nibh ultricies vehicula.
-            </p>
-
-            <ul className="list-disc pl-6 mt-4">
-              <li>Cras mattis consectetur purus sit amet fermentum.</li>
-              <li>Donec ullamcorper nulla non metus auctor fringilla.</li>
-              <li>
-                Maecenas sed diam eget risus varius blandit sit amet non magna.
-              </li>
-            </ul>
-
-            <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">결론</h2>
-
-            <p>
-              Cras mattis consectetur purus sit amet fermentum. Donec
-              ullamcorper nulla non metus auctor fringilla. Maecenas sed diam
-              eget risus varius blandit sit amet non magna.
-            </p>
+          <div className="prose prose-lg prose-headings:text-gray-900 prose-headings:font-bold max-w-none text-gray-600 mb-12">
+            <div dangerouslySetInnerHTML={{ __html: sanitizedContent }} />
           </div>
         </ScrollAnimation>
 
-        <ScrollAnimation delay={0.3}>
-          <div className="border-t border-b py-8 mb-8">
-            <h3 className="text-xl font-bold text-gray-900 mb-4">
-              이 글이 도움이 되었나요?
-            </h3>
-            <div className="flex space-x-4">
-              <button className="bg-primary hover:bg-primary-dark text-primary-foreground font-medium px-6 py-2 rounded-lg transition-colors">
-                네, 도움이 되었어요!
-              </button>
-              <button className="bg-white hover:bg-gray-100 text-gray-900 font-medium px-6 py-2 rounded-lg border transition-colors">
-                아니요, 더 개선이 필요해요
-              </button>
-            </div>
-          </div>
-        </ScrollAnimation>
-
-        <ScrollAnimation delay={0.4}>
+        {/* <ScrollAnimation delay={0.4}>
           <div className="bg-primary-light p-6 rounded-lg">
             <h3 className="text-xl font-bold text-gray-900 mb-4">
               댓글 남기기
@@ -188,7 +139,7 @@ export default function PostPage() {
               </button>
             </form>
           </div>
-        </ScrollAnimation>
+        </ScrollAnimation> */}
       </article>
     </div>
   );
