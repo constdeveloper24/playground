@@ -58,7 +58,7 @@ export const articles: article[] = [
   },
   {
     id: 2,
-    title: "장봄 프론트엔드 개발자(Front-end Developer)",
+    title: "sample",
     excerpt:
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
     content:
@@ -66,11 +66,11 @@ export const articles: article[] = [
     date: "2025년 3월 27일",
     category: "Play Ground Open",
     readTime: "",
-    image: "/images/profile.png",
+    image: "/images/empty.png",
   },
   {
     id: 3,
-    title: "장봄 프론트엔드 개발자(Front-end Developer)",
+    title: "sample",
     excerpt:
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
     content:
@@ -78,11 +78,11 @@ export const articles: article[] = [
     date: "2025년 3월 27일",
     category: "Play Ground Open",
     readTime: "",
-    image: "/images/profile.png",
+    image: "/images/empty.png",
   },
   {
     id: 4,
-    title: "장봄 프론트엔드 개발자(Front-end Developer)",
+    title: "sample",
     excerpt:
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
     content:
@@ -90,11 +90,11 @@ export const articles: article[] = [
     date: "2025년 3월 27일",
     category: "Play Ground Open",
     readTime: "",
-    image: "/images/profile.png",
+    image: "/images/empty.png",
   },
   {
     id: 5,
-    title: "장봄 프론트엔드 개발자(Front-end Developer)",
+    title: "sample",
     excerpt:
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
     content:
@@ -102,11 +102,11 @@ export const articles: article[] = [
     date: "2025년 3월 27일",
     category: "Play Ground Open",
     readTime: "",
-    image: "/images/profile.png",
+    image: "/images/empty.png",
   },
   {
     id: 6,
-    title: "장봄 프론트엔드 개발자(Front-end Developer)",
+    title: "sample",
     excerpt:
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
     content:
@@ -114,11 +114,11 @@ export const articles: article[] = [
     date: "2025년 3월 27일",
     category: "Play Ground Open",
     readTime: "",
-    image: "/images/profile.png",
+    image: "/images/empty.png",
   },
   {
     id: 7,
-    title: "장봄 프론트엔드 개발자(Front-end Developer)",
+    title: "sample",
     excerpt:
       "프론트엔드 개발자 봄이 AI와 함께하는 창작 놀이터 — 봄's Playground",
     content:
@@ -126,7 +126,7 @@ export const articles: article[] = [
     date: "2025년 3월 27일",
     category: "Play Ground Open",
     readTime: "",
-    image: "/images/profile.png",
+    image: "/images/empty.png",
   },
 ];
 

@@ -214,7 +214,7 @@ export default function PortfolioDetailPage() {
               {portfolioItems
                 .filter((item) => item.id !== project.id)
                 .slice(0, 3)
-                .map((item, index) => (
+                .map((item) => (
                   <Link
                     key={item.id}
                     href={`/portfolio/${item.id}`}
@@ -223,7 +223,7 @@ export default function PortfolioDetailPage() {
                     <div className="border rounded-lg overflow-hidden hover:shadow-md transition-shadow">
                       <div className="h-40 overflow-hidden">
                         <img
-                          src={item.image || "/placeholder.svg"}
+                          src={item.image || "/images/empty.png"}
                           alt={item.title}
                           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105"
                         />
